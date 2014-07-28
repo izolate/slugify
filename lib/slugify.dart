@@ -2,7 +2,6 @@ library slugify;
 
 class Slugify {
 
-  String _slug;
   String _delimiter;
   bool _lowercase;
   Map<String, String> _replacements = {
@@ -400,29 +399,30 @@ class Slugify {
     'ي': 'y'
   };
 
-  _create_slug(String str) {
-    str = str.trim(); // trim leading/trailing whitespace
-    str = _lowercase? str.toLowerCase() : str;
+  Slugify({String delimiter: '-', bool lowercase: true}) {
+    // config settings
+    _delimiter = delimiter;
+    _lowercase = lowercase;
+  }
 
-    _slug = str
+  slugify(String phrase) {
+    // trim leading/trailing whitespace & choose case
+    String slug = phrase.trim();
+    slug = _lowercase? slug.toLowerCase() : slug;
+
+    // substitute for latin characters
+    _replacements.forEach((k, v) {
+      slug = slug.replaceAll(k, v);
+    });
+
+    slug = slug
       // condense whitespaces
       .replaceAll(new RegExp(r'\s{2,}'), ' ')
       // remove punctuation
       .replaceAll(new RegExp(r'[^\w\s]'), '')
-      // add dashes
+      // add delimiter
       .replaceAll(' ', _delimiter);
 
-    _replacements.forEach((k, v) {
-      _slug = _slug.replaceAll(k, v);
-    });
-
-    return _slug;
-  }
-
-  slugify({String value, String delim: '-', bool lower: true}) {
-    // set options
-    _delimiter = delim;
-    _lowercase = lower;
-    return _create_slug(value);
+    return slug;
   }
 }
