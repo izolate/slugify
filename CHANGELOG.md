@@ -1,10 +1,12 @@
 # Changelog
 
-## 0.0.2
+## 0.1.0
+* Added documentation
 
-Added unit tests  
-Added examples
+## 0.0.2
+* Added unit tests
+* Added examples
 
 ## 0.0.1
 
-Initial commit
+* Initial commit
