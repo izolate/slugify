@@ -3,10 +3,10 @@ import 'package:slugify/slugify.dart';
 void main() {
 
   // slugify instances with different config
-  var slugify1 = new Slugify();
-  var slugify2 = new Slugify(lowercase: false);
-  var slugify3 = new Slugify(delimiter: '*');
-  var slugify4 = new Slugify(delimiter: ' ಠ_ಠ ', lowercase: false);
+  Slugify slugify1 = new Slugify();
+  Slugify slugify2 = new Slugify(lowercase: false);
+  Slugify slugify3 = new Slugify(delimiter: '*');
+  Slugify slugify4 = new Slugify(delimiter: ' ಠ_ಠ ', lowercase: false);
 
   print( slugify1.slugify('This is a standard post title') );
   print( slugify1.slugify('Robert\'); DROP TABLE Students;--') );
