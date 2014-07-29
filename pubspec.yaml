@@ -1,4 +1,5 @@
 name: slugify
-version: 0.0.1
-description: A pub package
-authors: izolate <izolate@gmail.com>
+version: 0.0.2
+description: Converts strings into slugs, for pretty URLs
+authors: izolate
+homepage: https://github.com/izolate/slugify
