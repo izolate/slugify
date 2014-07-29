@@ -419,7 +419,7 @@ class Slugify {
       // condense whitespaces
       .replaceAll(new RegExp(r'\s{2,}'), ' ')
       // remove punctuation
-      .replaceAll(new RegExp(r'[^\w\s]'), '')
+      .replaceAll(new RegExp(r'[^\w\s-]'), '')
       // add delimiter
       .replaceAll(' ', _delimiter);
 
