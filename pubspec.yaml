@@ -3,3 +3,5 @@ version: 0.0.2
 description: Converts strings into slugs, for pretty URLs
 author: izolate
 homepage: https://github.com/izolate/slugify
+dev_dependencies:
+  unittest: any

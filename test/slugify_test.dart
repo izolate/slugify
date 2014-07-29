@@ -1,17 +1,38 @@
+import 'package:unittest/unittest.dart';
 import 'package:slugify/slugify.dart';
 
 void main() {
 
-  var case1 = new Slugify();
-  print( case1.slugify('Robert\'); DROP TABLE Students;--') );
+  Slugify slugify1 = new Slugify();
+  Slugify slugify2 = new Slugify(delimiter: '%');
+  Slugify slugify3 = new Slugify(lowercase: false);
 
-  var case2 = new Slugify(delimiter: '*');
-  print( case2.slugify('u wot m8? i\'ll hook u in   \\the\\ (gabber) m8 i sw/er on `me` m.u.m.') );
+  // test 1: Defaults
+  test('Defaults', () {
+    expect(
+      slugify1.slugify('This is a test'),
+      equals('this-is-a-test')
+    );
+  });
 
-  var case3 = new Slugify(lowercase: false);
-  print( case3.slugify('NO I CAN\'T **STOP** {YELL}ING CAUSE THAT\'S HOW I TALK!') );
+  // test 2: Delimiter
+  test('Custom delimiter', () {
+    expect(
+      slugify2.slugify('Per Cent'),
+      equals('per%cent')
+    );
+  });
 
-  var case4 = new Slugify(delimiter: ' ಠ_ಠ ', lowercase: false);
-  print( case4.slugify('VOULEZ-VOUS COUCHER AVEC MOI, s\'il te plaît?') );
+  // test 3: Uppercase
+  test('Uppercase', () {
+    expect(
+      slugify3.slugify('CAPS LOCK IS CRUISE CONTROL FOR COOL'),
+      equals('CAPS-LOCK-IS-CRUISE-CONTROL-FOR-COOL')
+    );
+  });
 
+  // test 4: character replacement
+  test('Character replacement', () {
+    expect(slugify1.slugify('Scheiße'), equals('scheisse'));
+  });
 }
