@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.1
+* Set return type on `Slugify.slugify()`
+
 ## 0.1.0
 * Added documentation
 
