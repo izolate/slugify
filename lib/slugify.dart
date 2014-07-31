@@ -405,7 +405,7 @@ class Slugify {
     _lowercase = lowercase;
   }
 
-  slugify(String phrase) {
+  String slugify(String phrase) {
     // trim leading/trailing whitespace & choose case
     String slug = phrase.trim();
     slug = _lowercase? slug.toLowerCase() : slug;
