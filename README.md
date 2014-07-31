@@ -21,4 +21,4 @@ Converts strings to slugs, for pretty URLs
 
 By default, the slugs returned are lowercased and delimited by `-` to optimize for URL use. You can override this by supplying the parameters `delimiter (String)` and `lowercase (bool)` when instantiating the class.
 
-    new Slugify(delimiter: '_', lowercase: false); // HELLO_WORLD
+    new Slugify(delimiter: '_', lowercase: false);
