@@ -1,7 +1,8 @@
 name: slugify
-version: 0.1.1
+version: 0.2.0
 description: Converts strings into slugs, for pretty URLs
 author: izolate
 homepage: https://github.com/izolate/slugify
+sdk: ">=2.0.0-dev <3.0.0"
 dev_dependencies:
-  unittest: any
+  test: ^1.5.1
