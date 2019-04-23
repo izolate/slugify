@@ -1,29 +1,35 @@
-import "package:test/test.dart" show equals, expect, test;
+import 'package:test/test.dart' show equals, expect, test;
 import 'package:slugify/slugify.dart';
 
 void main() {
-  // test 1: Defaults
-  test('Defaults', () {
-    Slugify slugify = Slugify();
-    expect(slugify.slugify('This is a test'), equals('this-is-a-test'));
+  test('returns a slugified string with default options', () {
+    String result = Slugify('Hello, world! This is a test');
+    String expected = 'hello-world-this-is-a-test';
+    expect(result, equals(expected));
   });
 
-  // test 2: Delimiter
-  test('Custom delimiter', () {
-    Slugify slugify = Slugify(delimiter: '%');
-    expect(slugify.slugify('Per Cent'), equals('per%cent'));
+  test('preserves case when lowercase is false', () {
+    String result = Slugify('CAPS LOCK IS STUCK ON', lowercase: false);
+    String expected = 'CAPS-LOCK-IS-STUCK-ON';
+    expect(result, equals(expected));
   });
 
-  // test 3: Uppercase
-  test('Uppercase', () {
-    Slugify slugify = Slugify(lowercase: false);
-    expect(slugify.slugify('CAPS LOCK IS CRUISE CONTROL FOR COOL'),
-        equals('CAPS-LOCK-IS-CRUISE-CONTROL-FOR-COOL'));
+  test('supports a custom delimiter', () {
+    String result = Slugify('The tests are all passing', delimiter: '👏');
+    String expected = 'the👏tests👏are👏all👏passing';
+    expect(result, equals(expected));
   });
 
-  // test 4: character replacement
-  test('Character replacement', () {
-    Slugify slugify = Slugify();
-    expect(slugify.slugify('Scheiße'), equals('scheisse'));
+  test('normalizes text to the latin character set', () {
+    String result = Slugify('Nín hǎo. Wǒ shì zhōng guó rén');
+    String expected = 'nin-hao-wo-shi-zhong-guo-ren';
+    expect(result, equals(expected));
   });
+
+  test('trims leading/trailing whitespace', () {
+    String result = Slugify('  too many spaces  ');
+    String expected = 'too-many-spaces';
+    expect(result, equals(expected));
+  });
+
 }
