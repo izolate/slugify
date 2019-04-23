@@ -1,7 +1,6 @@
 library slugify;
 
 class Slugify {
-
   String _delimiter;
   bool _lowercase;
   Map<String, String> _replacements = {
@@ -470,7 +469,7 @@ class Slugify {
   String slugify(String phrase) {
     // trim leading/trailing whitespace & choose case
     String slug = phrase.trim();
-    slug = _lowercase? slug.toLowerCase() : slug;
+    slug = _lowercase ? slug.toLowerCase() : slug;
 
     // substitute for latin characters
     _replacements.forEach((k, v) {
@@ -478,12 +477,12 @@ class Slugify {
     });
 
     slug = slug
-      // condense whitespaces
-      .replaceAll(new RegExp(r'\s{2,}'), ' ')
-      // remove punctuation
-      .replaceAll(new RegExp(r'[^\w\s-]'), '')
-      // add delimiter
-      .replaceAll(' ', _delimiter);
+        // condense whitespaces
+        .replaceAll(new RegExp(r'\s{2,}'), ' ')
+        // remove punctuation
+        .replaceAll(new RegExp(r'[^\w\s-]'), '')
+        // add delimiter
+        .replaceAll(' ', _delimiter);
 
     return slug;
   }
