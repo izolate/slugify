@@ -31,5 +31,4 @@ void main() {
     String expected = 'too-many-spaces';
     expect(result, equals(expected));
   });
-
 }

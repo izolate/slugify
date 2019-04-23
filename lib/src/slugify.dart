@@ -1,6 +1,6 @@
 import 'package:slugify/src/replacements.dart';
 
-const multipleWhitespacePattern = r'\s{2,}';
+const dupeSpacePattern = r'\s{2,}';
 const punctuationPattern = r'[^\w\s-]';
 
 Slugify(String text, {String delimiter = '-', bool lowercase = true}) {
@@ -17,7 +17,7 @@ Slugify(String text, {String delimiter = '-', bool lowercase = true}) {
 
   slug = slug
       // Condense whitespaces to 1 space
-      .replaceAll(RegExp(multipleWhitespacePattern), ' ')
+      .replaceAll(RegExp(dupeSpacePattern), ' ')
       // Remove punctuation
       .replaceAll(RegExp(punctuationPattern), '')
       // Add delimiter
