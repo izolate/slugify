@@ -49,6 +49,7 @@ const replacements = {
   'ǎ': 'a',
   'ª': 'a',
   '@': 'at',
+  '&': 'and',
   'Ĉ': 'CX',
   'Ċ': 'C',
   'ĉ': 'cx',

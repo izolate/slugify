@@ -31,4 +31,10 @@ void main() {
     String expected = 'too-many-spaces';
     expect(result, equals(expected));
   });
+
+  test('removes or replaces punctuation', () {
+    String result = Slugify('("foo!*") <&> ~[^b@r!#=];');
+    String expected = 'foo-and-batr';
+    expect(result, equals(expected));
+  });
 }
