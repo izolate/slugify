@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.0.0] - 2019-04-23
 ### Added
 - Environment to pubspec
+- Ampersand to replacements
+- Vietnamese replacements (thanks @lyquocnam)
 
 ### Changed
 - Update package to Dart 2
 - Replace `unittest` package with `test`
+- Refactor class to top-level function
+- Rewrite tests
 - Add version constraint for test package
 - Code formatting with dartfmt
 
