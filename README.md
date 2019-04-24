@@ -1,24 +1,34 @@
-# slugify
+# Slugify
 
-Converts strings to slugs, for pretty URLs
+Dart<sup>[[1]](#footnote)</sup> package to convert a **string** to a **slug**, useful for URLs, filenames, IDs and more.
 
 ## Features
 
-* Removes special characters
+* Removes unfavorable characters
 * Approximates replacements for characters not in the Latin alphabet
-* Allows custom delimiter and case sensitivity
+* Options for a custom delimiter and case sensitivity
 
 ## Usage
 
-    import 'package:slugify/slugify.dart';
+```dart
+import 'package:slugify/slugify.dart';
 
-    Slugify slugify = new Slugify();
-    String slug = slugify.slugify('Hello World!');
+// Use with default options.
+String slug = Slugify('Hello, World! Foo Bar');
+print(slug); // hello-world-foo-bar
 
-    print(slug); // hello-world
+// Use with custom options.
+String slug2 = Slugify('Hello, World! Foo Bar', lowercase: false, delimiter: '🙂');
+print(slug2) // Hello🙂World🙂Foo🙂Bar
+```
 
-### Custom settings
+### Options
 
-By default, the slugs returned are lowercased and delimited by `-` to optimize for URL use. You can override this by supplying the parameters `delimiter (String)` and `lowercase (bool)` when instantiating the class.
+Name | Type | Default | Description
+--- | --- | --- | ---
+`delimiter` | `String` | `"-"` | Separator between words
+`lowercase` | `bool` | `true` | Convert text to lowercase
 
-    new Slugify(delimiter: '_', lowercase: false);
+---
+
+<a name="footnote">[1]</a>: This package supports Dart 2
