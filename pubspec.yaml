@@ -1,7 +1,8 @@
 name: slugify
 version: 1.0.0
 description: >-
-  Converts strings into slugs, for pretty URLs
+  Converts a string into a slug.
+  Useful for URLs, filenames, IDs, and more.
 author: izolate <izolate@gmail.com>
 homepage: https://github.com/izolate/slugify
 documentation: https://github.com/izolate/slugify/blob/master/README.md
