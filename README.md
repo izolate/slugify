@@ -1,12 +1,13 @@
 # Slugify
 
-Dart<sup>[[1]](#footnote)</sup> package to convert a **string** to a **slug**, useful for URLs, filenames, IDs and more.
+Dart package to convert a **string** to a **slug**, useful for URLs, filenames, IDs and more.
 
 ## Features
 
 * Removes unfavorable characters
 * Approximates replacements for characters not in the Latin alphabet
 * Options for a custom delimiter and case sensitivity
+* Supports Dart 2
 
 ## Usage
 
@@ -28,7 +29,3 @@ Name | Type | Default | Description
 --- | --- | --- | ---
 `delimiter` | `String` | `"-"` | Separator between words
 `lowercase` | `bool` | `true` | Convert text to lowercase
-
----
-
-<a name="footnote">[1]</a>: This package supports Dart 2
