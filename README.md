@@ -1,4 +1,6 @@
-# Slugify
+# slugify
+
+[![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://pub.dev/packages/effective_dart)
 
 Dart package to convert a **string** to a **slug**, useful for URLs, filenames, IDs and more.
 
@@ -15,11 +17,11 @@ Dart package to convert a **string** to a **slug**, useful for URLs, filenames, 
 import 'package:slugify/slugify.dart';
 
 // Use with default options.
-String slug = Slugify('Hello, World! Foo Bar');
+String slug = slugify('Hello, World! Foo Bar');
 print(slug); // hello-world-foo-bar
 
 // Use with custom options.
-String slug2 = Slugify('Hello, World! Foo Bar', lowercase: false, delimiter: '🙂');
+String slug2 = slugify('Hello, World! Foo Bar', lowercase: false, delimiter: '🙂');
 print(slug2) // Hello🙂World🙂Foo🙂Bar
 ```
 
