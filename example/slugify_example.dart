@@ -1,4 +1,4 @@
-import 'package:slugify/slugify.dart';
+import 'package:slugify3/slugify3.dart';
 
 void main() {
   // slugify with default config.
