@@ -1,4 +1,4 @@
-/// Lists the common replacements
+/// List of common character replacements.
 const replacements = {
   '¹': '1',
   '²': '2',

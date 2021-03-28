@@ -1,12 +1,12 @@
-import 'package:slugify/src/replacements.dart';
+import 'replacements.dart';
 
 final _dupeSpaceRegExp = RegExp(r'\s{2,}');
 final _punctuationRegExp = RegExp(r'[^\w\s-]');
 
-/// Converts [text] to a slugified [String] separated by the [delimiter].
-Slugify(String text, {String delimiter = '-', bool lowercase = true}) {
+/// Converts [text] to a slug [String] separated by the [delimiter].
+String slugify(String text, {String delimiter = '-', bool lowercase = true}) {
   // Trim leading and trailing whitespace.
-  String slug = text.trim();
+  var slug = text.trim();
 
   // Make the text lowercase (optional).
   if (lowercase) {
