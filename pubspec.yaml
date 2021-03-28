@@ -1,5 +1,5 @@
 name: slugify
-version: 1.0.0
+version: 2.0.0
 description: >-
   Converts a string into a slug.
   Useful for URLs, filenames, IDs, and more.
