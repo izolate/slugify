@@ -1,7 +1,7 @@
 import 'replacements.dart';
 
-final _dupeSpaceRegExp = RegExp(r'\s{2,}');
-final _punctuationRegExp = RegExp(r'[^\w\s-]');
+final _dupeSpaceRegExp = RegExp(r'\s{2,}', unicode: true);
+final _punctuationRegExp = RegExp(r'[^\p{L}\p{N}\s-]', unicode: true);
 
 /// Converts [text] to a slug [String] separated by the [delimiter].
 String slugify(String text, {String delimiter = '-', bool lowercase = true}) {

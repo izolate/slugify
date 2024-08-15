@@ -13,3 +13,6 @@ build/
 
 # Include when developing application packages.
 # pubspec.lock
+
+
+.idea/

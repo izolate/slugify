@@ -1,5 +1,5 @@
 name: slugify
-version: 2.0.0
+version: 3.0.0
 description: >-
   Converts a string into a slug.
   Useful for URLs, filenames, IDs, and more.
@@ -7,7 +7,7 @@ author: izolate <yoshtalwar@gmail.com>
 homepage: https://github.com/izolate/slugify
 documentation: https://github.com/izolate/slugify/blob/master/README.md
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=3.3.0 <4.0.0'
 dev_dependencies:
-  test: ^1.16.4
-  effective_dart: ^1.0.0
+  test: ^1.25.8
+  lints: ^4.0.0
